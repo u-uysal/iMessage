@@ -1,5 +1,6 @@
 import React from 'react';
 import Imessage from "./components/Imessage"
+import firebase from "./Firebase"
 
 import './App.css';
 
