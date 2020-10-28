@@ -25,17 +25,6 @@ function Sidebar() {
             setChats(nameList)
 
         })
-
-
-
-
-
-        /* db.collection("chats").onSnapshot(snapshot => (
-            setChats(snapshot.docs.map(doc => ({
-                id: doc.id,
-                data: doc.data()
-            })))
-        )) */
     }, [])
 
     const addChat = () => {
@@ -48,9 +37,7 @@ function Sidebar() {
             }
 
             uploadMessage.push(addChatName);
-            /*    db.collection("chats").add({
-                   chatName: chatName,
-               }) */
+
         } else {
             window.location.reload()
         }
