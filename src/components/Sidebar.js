@@ -6,7 +6,7 @@ import SearchIcon from "@material-ui/icons/Search"
 import RateReviewIcon from '@material-ui/icons/RateReview';
 import { useSelector } from 'react-redux'
 import { selectUser } from '../features/userSlice'
-import db, { auth } from "../firebase"
+import { auth } from "../firebase"
 import firebase from "firebase"
 
 function Sidebar() {
@@ -14,7 +14,7 @@ function Sidebar() {
     const [chats, setChats] = useState([])
     useEffect(() => {
 
-        const downloadChatName = firebase.database().ref("chats");
+        const downloadChatName = firebase.database().ref("chats")
         downloadChatName.on("value", (snapshot) => {
             const allName = snapshot.val()
             const nameList = [];
@@ -31,12 +31,12 @@ function Sidebar() {
         const chatName = prompt("Please enter a chat name");
 
         if (chatName) {
-            const uploadMessage = firebase.database().ref("chats");
+            const uploadChatName = firebase.database().ref("chats")
             const addChatName = {
                 chatName: chatName,
             }
 
-            uploadMessage.push(addChatName);
+            uploadChatName.push(addChatName);
 
         } else {
             window.location.reload()

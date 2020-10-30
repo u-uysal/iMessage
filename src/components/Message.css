@@ -22,3 +22,10 @@
    bottom: -5px;
    right: 0;
 }
+.user-own  {
+    margin-left: auto;
+}
+.photo-user-own {
+    display: none;
+    background-color: greenyellow;
+}
