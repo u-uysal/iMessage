@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import SidebarChat from "./SidebarChat"
-import { Avatar, IconButton } from "@material-ui/core"
+import { Avatar } from "@material-ui/core"
 import "./Sidebar.css"
 import SearchIcon from "@material-ui/icons/Search"
-import RateReviewIcon from '@material-ui/icons/RateReview';
 import { useSelector } from 'react-redux'
 import { selectUser } from '../features/userSlice'
 import { auth } from "../firebase"
@@ -12,6 +11,7 @@ import firebase from "firebase"
 function Sidebar() {
     const user = useSelector(selectUser)
     const [chats, setChats] = useState([])
+    const [query, setQuery] = useState("")
     useEffect(() => {
 
         const downloadChatName = firebase.database().ref("chats")
@@ -43,7 +43,12 @@ function Sidebar() {
         }
 
     }
+    const searchArray = chats.filter(chat => chat.chatName.includes(query) === true)
 
+
+    const handleChange = (event) => {
+        setQuery(event.target.value)
+    }
     return (
         <div className='sidebar'>
 
@@ -51,12 +56,12 @@ function Sidebar() {
                 <Avatar onClick={() => auth.signOut()} src={user.photo} className='sidebar__avatar' />
                 <div className="sidebar__input">
                     <SearchIcon />
-                    <input placeholder="search" />
+                    <input value={query} onChange={handleChange} placeholder="search" />
                 </div>
-                <IconButton variant='outlined' className="sidebar__inputButton"><RateReviewIcon onClick={addChat} /></IconButton>
+                <p className="sidebar__create_channel" onClick={addChat} >Create New Channel</p>
             </div>
             <div className="sidebar__chat">
-                {chats.map((chat) => (
+                {searchArray.length === 0 ? <p className="sidebar__noMatch">No match</p> : searchArray.map((chat) => (
                     <SidebarChat key={chat.id} id={chat.id} chatName={chat.chatName} />
                 ))}
 

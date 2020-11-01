@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./SidebarChat.css"
 import { useDispatch } from "react-redux"
-
+import { AiFillDelete } from "react-icons/ai";
 import firebase from "firebase"
 
 import { setChat } from "../features/chatSlice"
@@ -27,6 +27,13 @@ function SidebarChat({ id, chatName }) {
             })
         }
     }, [id])
+
+    const handleClick = (e) => {
+        const targetId = e.target.id;
+        const deleteMessage = firebase.database().ref("chats").child(targetId);
+        deleteMessage.remove();
+    }
+
     return (
         <div onClick={() => {
             dispatch(setChat({
@@ -34,10 +41,10 @@ function SidebarChat({ id, chatName }) {
                 chatName: chatName
             }))
         }} className="sidebarChat">
-            <Avatar src={chatInfo.photo} />
+            <Avatar src={chatInfo ? chatInfo.photo : null} />
             <div className="sidebarChat__info">
-                <h3>{chatName}</h3>
-                <p>{chatInfo.message}</p>
+                <h3 >{chatName}<span id={id} onClick={handleClick} className="sidebarChat__delete">Delete</span></h3>
+                <p>{chatInfo ? chatInfo.message : ""}</p>
                 <small>timestamp</small>
             </div>
         </div>

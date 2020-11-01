@@ -29,15 +29,19 @@ function Chat() {
                 }
 
                 setMessages(messageList)
+
             })
         }
     }, [chatId])
+
+
 
 
     const onKeyPress = (e) => {
         if (e.which === 13) {
             e.preventDefault();
             sendMessage();
+            window.scrollTo(0, document.body.scrollHeight);
         }
     };
 
@@ -58,11 +62,14 @@ function Chat() {
         };
         uploadMessage.push(messageTo);
         setInput("")
+
     }
 
     const inputHandler = (e) => {
         setInput(e.target.value)
     }
+
+
 
     return (
         <div className="chat">
@@ -73,7 +80,7 @@ function Chat() {
             </div>
 
             {/* CHat Messages */}
-            <div className="chat__messages">
+            <div id="messages" className="chat__messages">
                 {messages.filter(item => item.message !== undefined).map((item) => (
 
 
@@ -85,9 +92,9 @@ function Chat() {
             {/* CHat Input */}
 
             <div className="chat__input">
-                <form>
+                <form >
                     <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} value={input} />
-                    <button onClick={sendMessage}>Send</button>
+
                 </form>
 
             </div>
