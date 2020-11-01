@@ -33,7 +33,15 @@ function SidebarChat({ id, chatName }) {
         const deleteMessage = firebase.database().ref("chats").child(targetId);
         deleteMessage.remove();
     }
+    const updateHandler = (e) => {
+        const targetId = e.target.id;
+        const newName = prompt("New Name", chatName)
+        const getOldName = firebase.database().ref("chats").child(targetId);
+        getOldName.update({
+            chatName: newName
+        })
 
+    }
     return (
         <div onClick={() => {
             dispatch(setChat({
@@ -43,7 +51,10 @@ function SidebarChat({ id, chatName }) {
         }} className="sidebarChat">
             <Avatar src={chatInfo ? chatInfo.photo : null} />
             <div className="sidebarChat__info">
-                <h3 >{chatName}<span id={id} onClick={handleClick} className="sidebarChat__delete">Delete</span></h3>
+                <h3 >{chatName}
+                    <span id={id} onClick={handleClick} className="sidebarChat__delete">Delete</span>
+                    <span id={id} onClick={updateHandler} className="sidebarChat__delete">Update</span>
+                </h3>
                 <p>{chatInfo ? chatInfo.message : ""}</p>
                 <small>timestamp</small>
             </div>
