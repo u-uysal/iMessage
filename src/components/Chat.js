@@ -4,7 +4,7 @@ import firebase from "firebase"
 import "./Chat.css"
 import { useSelector } from 'react-redux'
 import { selectChatName, selectChatID } from '../features/chatSlice'
-import { selectUser, userSlice } from '../features/userSlice'
+import { selectUser } from '../features/userSlice'
 
 function Chat() {
     const user = useSelector(selectUser)
@@ -64,7 +64,6 @@ function Chat() {
         setInput(e.target.value)
     }
 
-    const arr = messages
     return (
         <div className="chat">
             {/* CHat Header */}
