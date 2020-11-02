@@ -52,3 +52,12 @@ margin-top: 20px;
     height: 80vh;
     overflow-y: scroll;
 }
+.chat__messages::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.chat__messages{
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
