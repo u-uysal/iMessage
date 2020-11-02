@@ -17,7 +17,7 @@ function Chat() {
     const chatId = useSelector(selectChatID)
 
 
-
+    // retrieve all messages to display
     useEffect(() => {
         if (chatId) {
             const downloadMessage = firebase.database().ref("chats").child(chatId);
@@ -36,6 +36,7 @@ function Chat() {
 
 
 
+    // when user hits the enter , message will be sent
 
     const onKeyPress = (e) => {
         if (e.which === 13) {
@@ -49,7 +50,7 @@ function Chat() {
     const sendMessage = (e) => {
 
 
-        //firebase
+        //message will be sent with this format
         const uploadMessage = firebase.database().ref("chats").child(chatId);
 
         const messageTo = {
@@ -93,6 +94,8 @@ function Chat() {
 
             <div className="chat__input">
                 <form >
+
+                    {/* if user does not select any channel , not allowed to write anything */}
                     {channelName ?
                         <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} value={input} /> :
                         <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} disabled value={input} />}

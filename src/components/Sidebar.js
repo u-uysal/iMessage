@@ -12,6 +12,8 @@ function Sidebar() {
     const user = useSelector(selectUser)
     const [chats, setChats] = useState([])
     const [query, setQuery] = useState("")
+
+    //retrive all channels names
     useEffect(() => {
 
         const downloadChatName = firebase.database().ref("chats")
@@ -27,6 +29,7 @@ function Sidebar() {
         })
     }, [])
 
+    // add new channel
     const addChat = () => {
         const chatName = prompt("Please enter a chat name");
 
@@ -43,6 +46,9 @@ function Sidebar() {
         }
 
     }
+
+    // search filter
+
     const searchArray = chats.filter(chat => chat.chatName.includes(query) === true)
 
 

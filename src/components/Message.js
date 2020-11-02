@@ -7,10 +7,12 @@ import "./Message.css"
 function Message({ item }) {
 
     const user = useSelector(selectUser)
-
+    // decide who is writing message
     const isUser = user.email === item.email
     const styleForName = isUser ? "own" : "guest";
 
+
+    //convert to miliseconds to formal date format
     function msToTime(duration) {
 
         if (duration) {
@@ -26,7 +28,10 @@ function Message({ item }) {
         }
     }
 
+    // specify when the message was sent
     const timestamp = item ? msToTime(item.created) : ""
+
+
     return (
         <div className={`message user-${styleForName}`}>
             {isUser ? null : <Avatar src={item.photo} />}

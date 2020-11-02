@@ -9,6 +9,8 @@ function SidebarChat({ id, chatName }) {
     const dispatch = useDispatch();
     const [chatInfo, setChatInfo] = useState([])
 
+
+    // display content and time of the last message
     useEffect(() => {
         if (id) {
             const downloadMessage = firebase.database().ref("chats").child(id);
@@ -26,11 +28,17 @@ function SidebarChat({ id, chatName }) {
         }
     }, [id])
 
+
+    // delete individual channel
     const handleClick = (e) => {
         const targetId = e.target.id;
         const deleteMessage = firebase.database().ref("chats").child(targetId);
         deleteMessage.remove();
     }
+
+
+
+    // rename individual channel
     const renameHandler = (e) => {
         const targetId = e.target.id;
         const newName = prompt("New Name", chatName)
@@ -42,7 +50,7 @@ function SidebarChat({ id, chatName }) {
     }
 
 
-
+    // use timeago package to learn when tis message was sent
     const timestamp = chatInfo ? timeago.format(chatInfo.created) : ""
 
 
