@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./SidebarChat.css"
 import { useDispatch } from "react-redux"
-import { AiFillDelete } from "react-icons/ai";
 import firebase from "firebase"
-
 import { setChat } from "../features/chatSlice"
 import { Avatar } from "@material-ui/core"
 
@@ -33,7 +31,7 @@ function SidebarChat({ id, chatName }) {
         const deleteMessage = firebase.database().ref("chats").child(targetId);
         deleteMessage.remove();
     }
-    const updateHandler = (e) => {
+    const renameHandler = (e) => {
         const targetId = e.target.id;
         const newName = prompt("New Name", chatName)
         const getOldName = firebase.database().ref("chats").child(targetId);
@@ -52,8 +50,12 @@ function SidebarChat({ id, chatName }) {
             <Avatar src={chatInfo ? chatInfo.photo : null} />
             <div className="sidebarChat__info">
                 <h3 >{chatName}
-                    <span id={id} onClick={handleClick} className="sidebarChat__delete">Delete</span>
-                    <span id={id} onClick={updateHandler} className="sidebarChat__delete">Update</span>
+                    <div className="sidebarChat-hover">
+                        <div className="tooltip "><span id={id} onClick={handleClick} className="sidebarChat__delete"></span><span class="tooltiptext">Delete</span></div>
+                        <div className="tooltip "><span id={id} onClick={renameHandler} className="sidebarChat__rename"></span><span class="tooltiptext">Rename</span></div>
+                    </div>
+
+
                 </h3>
                 <p>{chatInfo ? chatInfo.message : ""}</p>
                 <small>timestamp</small>

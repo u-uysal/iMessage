@@ -59,7 +59,38 @@
 }
 
 .sidebar__create_channel {
+    margin-left: 20px;
+    background-image: url("../images/icons8-create-order-32.png");
+    height: 32px;
+    width: 32px;
+    display: inline-block;
     cursor: pointer;
-    margin: 0 auto;
-text-decoration: underline;
+}
+
+
+.tooltip-create {
+  position: relative;
+  display: inline-block;
+  
+}
+
+.tooltip-create .tooltip-createtext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip-create */
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip-create:hover .tooltip-createtext {
+  visibility: visible;
 }

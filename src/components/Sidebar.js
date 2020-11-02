@@ -58,7 +58,8 @@ function Sidebar() {
                     <SearchIcon />
                     <input value={query} onChange={handleChange} placeholder="search" />
                 </div>
-                <p className="sidebar__create_channel" onClick={addChat} >Create New Channel</p>
+                <div className="tooltip-create"><span onClick={addChat} className="sidebar__create_channel"></span><span className="tooltip-createtext">Create New Channel</span></div>
+
             </div>
             <div className="sidebar__chat">
                 {searchArray.length === 0 ? <p className="sidebar__noMatch">No match</p> : searchArray.map((chat) => (
