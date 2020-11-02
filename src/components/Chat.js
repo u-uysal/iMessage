@@ -53,7 +53,7 @@ function Chat() {
         const uploadMessage = firebase.database().ref("chats").child(chatId);
 
         const messageTo = {
-            /* timestamp: firebase.fieldValue.serverTimestamp(), */
+            created: firebase.database.ServerValue.TIMESTAMP,
             message: input,
             uid: user.uid,
             photo: user.photo,
@@ -93,7 +93,9 @@ function Chat() {
 
             <div className="chat__input">
                 <form >
-                    <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} value={input} />
+                    {channelName ?
+                        <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} value={input} /> :
+                        <input type="text" onKeyPress={onKeyPress} placeholder="Send messages" onChange={inputHandler} disabled value={input} />}
 
                 </form>
 

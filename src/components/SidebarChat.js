@@ -40,6 +40,26 @@ function SidebarChat({ id, chatName }) {
         })
 
     }
+
+
+    function msToTime(duration) {
+
+        if (duration) {
+            let seconds = Math.floor((duration / 1000) % 60)
+            let minutes = Math.floor((duration / (1000 * 60)) % 60)
+            let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            return (hours + 1) + ":" + minutes + ":" + seconds;
+        }
+    }
+
+    const timestamp = chatInfo ? msToTime(chatInfo.created) : ""
+
+
     return (
         <div onClick={() => {
             dispatch(setChat({
@@ -58,7 +78,8 @@ function SidebarChat({ id, chatName }) {
 
                 </h3>
                 <p>{chatInfo ? chatInfo.message : ""}</p>
-                <small>timestamp</small>
+                <small>{chatInfo ? timestamp : ""}</small>
+
             </div>
         </div>
     )
