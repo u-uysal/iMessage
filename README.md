@@ -1,68 +1,83 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# :crystal_ball: iMessage App
 
-## Available Scripts
+> This repository is created by using HTML5, CSS3, Firebase and ReactJS .
+> One of the main outcomes of this project is figuring out how to create, explore and run a web application in a development environment, then deploying it to the production environment in accordance with **Test-Driven-Development(TDD)** approach.
 
-In the project directory, you can run:
+>Thanks to this application, the user can chat with the person whoever they want after google auth, even if they are online later, they can review the messages again, as the previous messages are saved in the database, and delete the messages they do not want.
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---
 
-### `yarn test`
+## Index
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Learning Objectives and Supported Skills](#learning-objectives-and-supported-skills)
+- [Installation](#installation)
+- [Technology-Tool-Stack](#technology-tool-stack)
+- [Contributing](#contributing)
+- [License](#credits)
 
-### `yarn build`
+---
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Learning Objectives and Supported Skills
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Creating a user friendly React Application (using Functional Components and Hooks)
+- Building wireframes, mocks and prototype of pages
+- Setting up a professional folder structure
+- Understanding Test-Driven-Development(TDD)
+- Implementing Continuous Integration and Continuous Deployment (CI/CD)
+- Setting up API endpoints
+- Debugging ReactJs code in IDE
+- Exploring and understanding DOM
+- Exploring and understanding Firebase
+- Exploring and understanding Timeago Package
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `yarn eject`
+## Installation
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- You should have [npm](https://nodejs.org/en/download/) installed on your machine.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Clone the repository:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+git clone https://github.com/u-uysal/iMessage.git
+cd my-app
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Install dependancies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm install
+```
 
-### Code Splitting
+- Run the app in:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+npm start
+```
 
-### Analyzing the Bundle Size
+- Open [http://localhost:3000](http://localhost:3000) to view the page in your browser.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Technology-Tool-Stack
 
-### Making a Progressive Web App
+- **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+- **Timeago** : timeago.js is a nano library(less than 2 kb) used to format datetime with *** time ago statement. eg: '3 hours ago.
 
-### Advanced Configuration
+- **Firebase** : Firebase is a toolset to “build, improve, and grow your app”, and the tools it gives you cover a large portion of the services that developers would normally have to build themselves, but don’t really want to build, because they’d rather be focusing on the app experience itself. This includes things like analytics, authentication, databases, configuration, file storage, push messaging, and the list goes on. The services are hosted in the cloud, and scale with little to no effort on the part of the developer.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+---
 
-### Deployment
+## Contributing
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- You are more than welcomed to contribute in this project by opening an issue or sending a pull request.
 
-### `yarn build` fails to minify
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
