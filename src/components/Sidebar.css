@@ -66,7 +66,14 @@
     display: inline-block;
     cursor: pointer;
 }
-
+.sidebar__sign_out {
+    margin-left: 20px;
+    background-image: url("../images/icons8-export-32.png");
+    height: 32px;
+    width: 32px;
+    display: inline-block;
+    cursor: pointer;
+}
 
 .tooltip-create {
   position: relative;

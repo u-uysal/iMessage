@@ -65,6 +65,7 @@ function Sidebar() {
                     <input value={query} onChange={handleChange} placeholder="search" />
                 </div>
                 <div className="tooltip-create"><span onClick={addChat} className="sidebar__create_channel"></span><span className="tooltip-createtext">Create New Channel</span></div>
+                <div className="tooltip-create"><span onClick={() => auth.signOut()} className="sidebar__sign_out"></span><span className="tooltip-createtext">Sign Out</span></div>
 
             </div>
             <div className="sidebar__chat">
