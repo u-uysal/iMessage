@@ -1,6 +1,6 @@
 # :crystal_ball: iMessage App
 
-> This repository is created by using HTML5, CSS3, Firebase and ReactJS .
+> This repository is created by using HTML5, CSS3, Firebase , Redux and ReactJS .
 > One of the main outcomes of this project is figuring out how to create, explore and run a web application in a development environment, then deploying it to the production environment in accordance with **Test-Driven-Development(TDD)** approach.
 
 >Thanks to this application, the user can chat with the person whoever they want after google auth, even if they are online later, they can review the messages again, as the previous messages are saved in the database, and delete the messages they do not want.
