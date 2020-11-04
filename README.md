@@ -66,9 +66,11 @@ npm start
 
 - **React** : React. js is an open-source JavaScript library that is used for building user interfaces specifically for single-page applications. It's used for handling the view layer for web and mobile apps. React also allows us to create reusable UI components.
 
-- **Timeago** : timeago.js is a nano library(less than 2 kb) used to format datetime with *** time ago statement. eg: '3 hours ago.
+- **Redux** : Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces.
 
 - **Firebase** : Firebase is a toolset to “build, improve, and grow your app”, and the tools it gives you cover a large portion of the services that developers would normally have to build themselves, but don’t really want to build, because they’d rather be focusing on the app experience itself. This includes things like analytics, authentication, databases, configuration, file storage, push messaging, and the list goes on. The services are hosted in the cloud, and scale with little to no effort on the part of the developer.
+
+- **Timeago** : timeago.js is a nano library(less than 2 kb) used to format datetime with *** time ago statement. eg: '3 hours ago.
 
 ---
 
